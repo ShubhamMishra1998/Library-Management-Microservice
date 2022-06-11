@@ -7,8 +7,10 @@ import com.userservice.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,12 +29,12 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> createUser(UserDto userDto) throws UserException{
+    public ResponseEntity<UserDto> createUser(@RequestBody @Valid UserDto userDto) throws UserException{
         return ResponseEntity.status(HttpStatus.OK).body(userService.createUser(userDto));
     }
 
     @PutMapping("/{username}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable String username,UserDto userDto) throws UserException {
+    public ResponseEntity<UserDto> updateUser(@PathVariable String username,@RequestBody @Valid UserDto userDto) throws UserException {
         return ResponseEntity.status(HttpStatus.OK).body(userService.updateUser(username,userDto));
     }
 
