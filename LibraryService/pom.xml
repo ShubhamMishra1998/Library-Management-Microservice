@@ -8,14 +8,14 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.userservice</groupId>
-	<artifactId>userservice</artifactId>
+	<groupId>com.libraryservice</groupId>
+	<artifactId>libraryservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UserService</name>
-	<description>UserService Microservice Project</description>
+	<name>LibraryService</name>
+	<description>LibraryService project</description>
 	<properties>
 		<java.version>18</java.version>
-		<spring-cloud.version>2021.0.2</spring-cloud.version>
+		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -30,6 +30,34 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,13 +70,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.8</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -59,18 +80,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-		</dependency>
 	</dependencies>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

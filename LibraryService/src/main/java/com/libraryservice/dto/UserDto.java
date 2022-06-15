@@ -1,5 +1,7 @@
-package com.userservice.dto;
+package com.libraryservice.dto;
+
 import lombok.*;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
